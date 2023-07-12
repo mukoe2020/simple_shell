@@ -4,6 +4,7 @@ int strlen_alt(const char *s);
 char *strcat_alt(char *dest, char *src);
 int strcmp_alt(char *s1, char *s2);
 char *strchr_alt(char *s, char c);
+char *strcpy_alt(char *destination, char *source);
 /**
 *strlen_alt - Entry point
 * Description - 'function returning length of a string'
@@ -146,4 +147,23 @@ dest[h] = src[h];
 }
 return (dest);
 }
+/**
+  * strcpy_alt - Entry point
+  * Description - 'a function copying one pointer to another pointer'
+  * @source: char type string
+  * @destination: char string type
+  * Return: Pointer to dest
+  */
 
+char *strcpy_alt(char *destination, char *source)
+{
+	int h = 0;
+
+	while (sourcce[h] != '\0')
+	{
+		destination[h] = source[h];
+		h++;
+	}
+	destination[h] = '\0';
+	return (destination);
+}

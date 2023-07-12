@@ -1,8 +1,10 @@
+#include "shell.h"
+
 char *strdup_func(const char *s);
 char *strncat_alt(char *dest, char *src, int n);
 int strspn_alt(char *s, char *accept);
 int strncmp_alt(const char *s1, const char *s2, int n);
-
+char *strncpy_alt(char *destination, char *source, int n);
 
 /**
 * strdup_func - Entry point
@@ -157,7 +159,29 @@ return (-1);
 
 return (0);
 }
+/**
+* strncpy_alt - Entry point
+* Description -'a function that copies a string'
+* @destination: destination char string type
+* @source: initial char string type
+* @n: maximum number of bytes to be used
+* Return: pointer to destination
+*/
 
+char *strncpy_alt(char *destination, char *source, int n)
+{
+	int cob;
+
+	for (cob = 0; cob < n && source[cob] != '\0'; cob++)
+	{
+		destination[cob] = source[cob];
+	}
+	for (; cob < n; cob++)
+	{
+		destination[cob] = '\0';
+	}
+	return (destination);
+}
 
 
 
