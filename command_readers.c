@@ -1,9 +1,4 @@
 #include "shell.h"
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-
 /**
   * read_command - Uses getline to read input of user and handles EOF condition
   * Return: the string inputted

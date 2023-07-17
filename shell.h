@@ -1,5 +1,5 @@
-#define SHELL_H
-#ifndef SHELL_H
+#ifndef _SHELL_H
+#define _SHELL_H
 
 #include <string.h>
 #include <stdio.h>
@@ -25,7 +25,7 @@ char *read_command();
 /*Token Handlers */
 char **token_maker(char *linebuf);
 
-/* Execution Hnadlers */
+/* Execution Handlers */
 int exec_args();
 
 
@@ -45,5 +45,5 @@ char *strcpy_alt(char *destination, char *source);
 char *strncpy_alt(char *destination, char *source, int n);
 
 
-#endif /* SHELL_H */
+#endif /* _SHELL_H */
 
