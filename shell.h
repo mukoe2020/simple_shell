@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-#define TOK_DEL "\n\t\r\a"
+#define TOK_DEL " \n"
 #define CMD_LEN 64
 #define BUF 1024
 
