@@ -20,7 +20,7 @@ char *read_command()
 	if (getline_read == -1)
 	{
 		free(linebuf);
-		write(STDERR_FILENO, "Exiting our shell...\n", 25);
+		write(STDERR_FILENO, "Exiting...\n", 15);
 		return (NULL);
 	}
 	/* print prompt on newline if user taps on only enter */

@@ -17,6 +17,7 @@ int exec_args(char **tokens_made)
 	{
 		return (1);
 	}
+
 	if (ourchild == -1)
 	{
 		perror("child process failed to be created");
@@ -35,6 +36,5 @@ int exec_args(char **tokens_made)
 	{
 		wait(&condition);
 	}
-
 	return (-1);
 }

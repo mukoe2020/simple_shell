@@ -12,7 +12,7 @@ char *strcpy_alt(char *destination, char *source);
 *
 * Return: the length of given string 's'
 */
-int strlen_alt(char *s)
+int strlen_alt(const char *s)
 {
 	int len = 0;
 
@@ -159,7 +159,7 @@ char *strcpy_alt(char *destination, char *source)
 {
 	int h = 0;
 
-	while (sourcce[h] != '\0')
+	while (source[h] != '\0')
 	{
 		destination[h] = source[h];
 		h++;
