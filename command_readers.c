@@ -23,8 +23,9 @@ char *read_command()
 		write(STDERR_FILENO, "Exiting...\n", 15);
 		return (NULL);
 	}
-	/* print prompt on newline if user taps on only enter */
-	if (linebuf[0] == '\n')
+	/* print prompt on newline if user taps on only enter, or spaces */
+	if (linebuf[0] == '\n' || (strspn(linebuf, " \t\r\n") ==
+				strlen(linebuf)))
 	{
 		free(linebuf);
 		return (read_command()); /*calling function recursively*/
