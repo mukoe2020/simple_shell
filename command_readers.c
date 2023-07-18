@@ -25,17 +25,17 @@ char *read_command()
 	}
 	/* print prompt on newline if user taps on only enter, or spaces */
 	if (linebuf[0] == '\n' || (strspn(linebuf, " \t\r\n") ==
-				strlen(linebuf)))
+				strlen_alt(linebuf)))
 	{
 		free(linebuf);
 		return (read_command()); /*calling function recursively*/
 	}
 
-	if (linebuf[strlen(linebuf) - 1] != '\n')
+	if (linebuf[strlen_alt(linebuf) - 1] != '\n')
 	{
 		m += 2;
 		linebuf = (char *) realloc(linebuf, m);
-		linebuf[strlen(linebuf) - 1] = '\0';
+		linebuf[strlen_alt(linebuf) - 1] = '\0';
 	}
 
 	return (linebuf);

@@ -34,7 +34,7 @@ int exec_args(char **tokens_made);
 
 /* All String Function Implementations */
 
-int strlen_alt(const char *s);
+size_t strlen_alt(const char *s);
 char *strcat_alt(char *dest, char *src);
 int strcmp_alt(char *s1, char *s2);
 char *strchr_alt(char *s, char c);
