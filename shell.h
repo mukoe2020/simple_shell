@@ -29,7 +29,8 @@ void _release(char **tokens_made);
 /* Execution Handlers */
 int exec_args(char **tokens_made);
 
-
+/* Memory Allocation */
+void *custom_realloc(void *ptr, unsigned int old_s, size_t new_s);
 
 
 /* All String Function Implementations */

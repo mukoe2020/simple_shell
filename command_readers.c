@@ -34,7 +34,7 @@ char *read_command()
 	if (linebuf[strlen_alt(linebuf) - 1] != '\n')
 	{
 		m += 2;
-		linebuf = (char *) realloc(linebuf, m);
+		linebuf = (char *)custom_realloc(linebuf, m, m);
 		linebuf[strlen_alt(linebuf) - 1] = '\0';
 	}
 
