@@ -24,6 +24,7 @@ char *read_command();
 
 /*Token Handlers */
 char **token_maker(char *linebuf);
+void _release(char **tokens_made);
 
 /* Execution Handlers */
 int exec_args(char **tokens_made);
