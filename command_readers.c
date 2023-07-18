@@ -24,7 +24,7 @@ char *read_command()
 		return (NULL);
 	}
 	/* print prompt on newline if user taps on only enter, or spaces */
-	if (linebuf[0] == '\n' || (strspn(linebuf, " \t\r\n") ==
+	if (linebuf[0] == '\n' || (strspn_alt(linebuf, " \t\r\n") ==
 				strlen_alt(linebuf)))
 	{
 		free(linebuf);

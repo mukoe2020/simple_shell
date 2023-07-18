@@ -2,7 +2,7 @@
 
 char *strdup_func(const char *s);
 char *strncat_alt(char *dest, char *src, int n);
-int strspn_alt(char *s, char *accept);
+size_t strspn_alt(char *s, char *accept);
 int strncmp_alt(const char *s1, const char *s2, int n);
 char *strncpy_alt(char *destination, char *source, int n);
 
@@ -88,9 +88,9 @@ return (dest);
 */
 
 
-int strspn_alt(char *s, char *accept)
+size_t strspn_alt(char *s, char *accept)
 {
-int h, m;
+size_t h, m;
 
 
 for (h = 0; s[h] != '\0'; h++)
