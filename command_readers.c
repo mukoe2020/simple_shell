@@ -23,18 +23,19 @@ char *read_command()
 		write(STDERR_FILENO, "Exiting...\n", 15);
 		return (NULL);
 	}
-	/* print prompt on newline if user taps on only enter */
-	if (linebuf[0] == '\n')
+	/* print prompt on newline if user taps on only enter, or spaces */
+	if (linebuf[0] == '\n' || (strspn_alt(linebuf, " \t\r\n") ==
+				strlen_alt(linebuf)))
 	{
 		free(linebuf);
 		return (read_command()); /*calling function recursively*/
 	}
 
-	if (linebuf[strlen(linebuf) - 1] != '\n')
+	if (linebuf[strlen_alt(linebuf) - 1] != '\n')
 	{
 		m += 2;
-		linebuf = (char *) realloc(linebuf, m);
-		linebuf[strlen(linebuf) - 1] = '\0';
+		linebuf = (char *)custom_realloc(linebuf, m, m);
+		linebuf[strlen_alt(linebuf) - 1] = '\0';
 	}
 
 	return (linebuf);

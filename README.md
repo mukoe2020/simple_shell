@@ -1,3 +1,4 @@
-simple_shell colaboration for our alx project
-in this project we create a shell program using C languange 
+#simple_shell collaboration for our alx project.
+
+#In this project we create a simple unix shell program using C languange.
 

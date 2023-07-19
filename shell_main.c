@@ -22,7 +22,7 @@ void loop_ourshell(void)
 		condition = exec_args(tokens_made);
 
 		free(linebuf);
-		free(tokens_made);
+		_release(tokens_made);
 
 	} while (condition);
 }
@@ -40,3 +40,23 @@ int main(int ac __attribute__((unused)), char **argv __attribute__((unused)))
 	return (0);
 }
 
+/**
+  * _release - frees memory allocated for each token generated
+  * @tokens_made: double pointer to array of tokens
+  */
+
+void _release(char **tokens_made)
+{
+	int h;
+
+	if (tokens_made == NULL)
+	{
+		return;
+	}
+
+	for (h = 0; tokens_made[h] != NULL; h++)
+	{
+		free(tokens_made[h]);
+	}
+	free(tokens_made);
+}

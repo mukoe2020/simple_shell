@@ -24,23 +24,29 @@ char *read_command();
 
 /*Token Handlers */
 char **token_maker(char *linebuf);
+void _release(char **tokens_made);
 
 /* Execution Handlers */
 int exec_args(char **tokens_made);
 
+<<<<<<< HEAD
 /* customized getenv */
 void printEnvironmentVariable(const char *variable);
+=======
+/* Memory Allocation */
+void *custom_realloc(void *ptr, unsigned int old_s, size_t new_s);
+>>>>>>> 32e0d773c3972e71bcf2b25ccf55cf01a801affc
 
 
 /* All String Function Implementations */
 
-int strlen_alt(const char *s);
+size_t strlen_alt(const char *s);
 char *strcat_alt(char *dest, char *src);
 int strcmp_alt(char *s1, char *s2);
 char *strchr_alt(char *s, char c);
 char *strdup_func(const char *s);
 char *strncat_alt(char *dest, char *src, int n);
-int strspn_alt(char *s, char *accept);
+size_t strspn_alt(char *s, char *accept);
 int strncmp_alt(const char *s1, const char *s2, int n);
 char *strcpy_alt(char *destination, char *source);
 char *strncpy_alt(char *destination, char *source, int n);
