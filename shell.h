@@ -28,7 +28,8 @@ char **token_maker(char *linebuf);
 /* Execution Handlers */
 int exec_args(char **tokens_made);
 
-
+/* customized getenv */
+void printEnvironmentVariable(const char *variable);
 
 
 /* All String Function Implementations */

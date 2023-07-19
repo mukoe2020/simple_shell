@@ -167,3 +167,24 @@ char *strcpy_alt(char *destination, char *source)
 	destination[h] = '\0';
 	return (destination);
 }
+
+/**
+ * EnvironmentVariable - Entry point
+ * Description  - ' a function to  acces environmental variables'
+ * @variable : variable path name
+ * Return:  a string with envronmental variables
+ *
+ */
+void EnvironmentVariable(const char *variable)
+{
+	char *value = getenv(variable);
+
+	if (value != NULL)
+	{
+		printf("%s=%sn", variable, value);
+	}
+	else
+	{
+		printf("Environment variable not found: %sn", variable);
+	}
+}
