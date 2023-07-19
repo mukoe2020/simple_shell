@@ -13,7 +13,7 @@
 #define CMD_LEN 64
 #define BUF 1024
 
-
+/* Accessing environmental variables */
 extern char **environ;
 
 /*Shell's Loop*/
@@ -32,7 +32,7 @@ int exec_args(char **tokens_made);
 /* Command Path Handler*/
 char *commandExists(const char *cmd);
 
-/*customized getenv */
+/* Customized getenv */
 void printEnvironmentVariable(const char *variable);
 
 /* Memory Allocation */
