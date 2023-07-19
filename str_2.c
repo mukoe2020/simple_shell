@@ -183,12 +183,3 @@ char *strncpy_alt(char *destination, char *source, int n)
 	return (destination);
 }
 
-
-
-
-
-
-
-
-
-

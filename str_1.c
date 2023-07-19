@@ -1,7 +1,7 @@
 #include "shell.h"
 
 size_t strlen_alt(const char *s);
-char *strcat_alt(char *dest, char *src);
+char *strcat_alt(char *dest, const char *src);
 int strcmp_alt(char *s1, char *s2);
 char *strchr_alt(char *s, char c);
 char *strcpy_alt(char *destination, char *source);
@@ -31,7 +31,7 @@ size_t strlen_alt(const char *s)
 *
 * Return: pointer to the concantenated string
 */
-char *strcat_alt(char *dest, char *src)
+char *strcat_alt(char *dest, const char *src)
 {
 int dest_len = 0;
 int h;
@@ -170,7 +170,7 @@ char *strcpy_alt(char *destination, char *source)
 
 /**
  * EnvironmentVariable - Entry point
- * Description  - ' a function to  acces environmental variables'
+ * Description  - ' a function to  access environmental variables'
  * @variable : variable path name
  * Return:  a string with envronmental variables
  *
