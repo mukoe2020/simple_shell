@@ -13,7 +13,7 @@ char *commandExists(const char *cmd)
 
 	if (cmd[0] == '/' || cmd[0] == '.' || cmd[0] == '~')
 	{
-		if (access(cmd, F_OK) == 0)
+		if (access(cmd, F_OK) == 0) /*checks if cmd exists */
 			return (strdup_func(cmd));
 	}
 	else
