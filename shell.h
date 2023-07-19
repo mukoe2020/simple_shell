@@ -29,13 +29,14 @@ void _release(char **tokens_made);
 /* Execution Handlers */
 int exec_args(char **tokens_made);
 
-<<<<<<< HEAD
-/* customized getenv */
+/* command path*/
+char *commandExists(const char *command);
+
+/*customized getenv */
 void printEnvironmentVariable(const char *variable);
-=======
+
 /* Memory Allocation */
 void *custom_realloc(void *ptr, unsigned int old_s, size_t new_s);
->>>>>>> 32e0d773c3972e71bcf2b25ccf55cf01a801affc
 
 
 /* All String Function Implementations */
