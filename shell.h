@@ -33,11 +33,10 @@ int exec_args(char **tokens_made);
 char *commandExists(const char *cmd);
 
 /* Customized getenv */
-void printEnvironmentVariable(const char *variable);
+char *getenv_alt(const char *variable_name);
 
 /* Memory Allocation */
-void *custom_realloc(void *ptr, unsigned int old_s, size_t new_s);
-
+void *custom_realloc(void *ptr, unsigned int old_s, size_t);
 
 /* All String Function Implementations */
 
