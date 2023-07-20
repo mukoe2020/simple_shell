@@ -5,6 +5,7 @@ char *strcat_alt(char *dest, const char *src);
 int strcmp_alt(char *s1, char *s2);
 char *strchr_alt(char *s, char c);
 char *strcpy_alt(char *destination, char *source);
+char *getenv_alt(const char *variable_name);
 /**
 *strlen_alt - Entry point
 * Description - 'function returning length of a string'
@@ -168,23 +169,3 @@ char *strcpy_alt(char *destination, char *source)
 	return (destination);
 }
 
-/**
- * EnvironmentVariable - Entry point
- * Description  - ' a function to  access environmental variables'
- * @variable : variable path name
- * Return:  a string with envronmental variables
- *
- */
-void EnvironmentVariable(const char *variable)
-{
-	char *value = getenv(variable);
-
-	if (value != NULL)
-	{
-		printf("%s=%sn", variable, value);
-	}
-	else
-	{
-		printf("Environment variable not found: %sn", variable);
-	}
-}
