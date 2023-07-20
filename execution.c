@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * exec_args - Uses execve and fork to create processes to execute commands
  * @tokens_made: double pointer to commands/tokens
@@ -11,37 +10,40 @@ int exec_args(char **tokens_made)
 	char *cmd;
 	pid_t ourchild;
 
-	ourchild = fork();
-
 	if (tokens_made[0] == NULL)
 	{
 		return (1);
 	}
-
-	if (ourchild == -1)
-	{
-		perror("child process failed to be created");
-		return (1);
+	if (strcmp_alt(tokens_made[0], "exit") == 0)
+	{shell_exit();
 	}
-
-	if (!ourchild)
-	{
-		cmd = commandExists(tokens_made[0]);
-		if (cmd == NULL)
-		{
-			perror("Command not found");
-			return (0);
-		}
-		if (execve(cmd, tokens_made, environ) == -1)
-		{
-			perror(cmd);
-			free(cmd);
-			return (0);
-		}
+	else if (strcmp_alt(tokens_made[0], "env") == 0)
+	{shell_env();
 	}
 	else
 	{
-		wait(&condition);
+		ourchild = fork();
+		if (ourchild == -1)
+		{perror("child process failed to be created");
+			return (1);
+		}
+		if (!ourchild)
+		{
+			cmd = commandExists(tokens_made[0]);
+			if (cmd == NULL)
+			{perror("Command not found");
+				return (0);
+			}
+			if (execve(cmd, tokens_made, environ) == -1)
+			{perror(cmd);
+				free(cmd);
+				return (0);
+			}
+		}
+		else
+		{
+			wait(&condition);
+		}
 	}
 	return (-1);
 }

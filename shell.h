@@ -13,6 +13,10 @@
 #define CMD_LEN 64
 #define BUF 1024
 
+/* buit in commands */
+void shell_exit(void);
+void shell_env(void);
+
 /* Accessing environmental variables */
 extern char **environ;
 
