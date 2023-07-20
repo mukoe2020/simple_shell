@@ -169,3 +169,25 @@ char *strcpy_alt(char *destination, char *source)
 	return (destination);
 }
 
+/**
+ * getenv_alt - Retrieves the value of an environment variable
+ * @variable_name: The name of the variable to retrieve
+ *
+ * Return: The value of the environment variable, or NULL if not found
+ */
+char *getenv_alt(const char *variable_name)
+{
+	 int name_length = strlen_alt(variable_name);
+
+	char **env;
+
+	for (env = environ; *env; ++env)
+	{
+	if (strncmp_alt(variable_name, *env, name_length)
+		== 0 && (*env)[name_length] == '=')
+	{
+		return (&((*env)[name_length + 1]));
+	}
+	}
+	return (NULL);
+}
