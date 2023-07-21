@@ -15,7 +15,7 @@ void loop_ourshell(void)
 		linebuf = read_command();
 		if (linebuf == NULL)
 		{
-			free(linebuf);
+			/*free(linebuf);*/
 			break;
 		}
 		tokens_made = token_maker(linebuf);
