@@ -13,10 +13,6 @@
 #define CMD_LEN 64
 #define BUF 1024
 
-/* buit in commands */
-void shell_exit(void);
-void shell_env(void);
-
 /* Accessing environmental variables */
 extern char **environ;
 
@@ -41,6 +37,11 @@ char *getenv_alt(const char *variable_name);
 
 /* Memory Allocation */
 void *custom_realloc(void *ptr, unsigned int old_s, size_t);
+
+/* Built-in Command Handlers */
+void blt_matcher(char **tokens_made);
+void shell_exit(void);
+void shell_env(void);
 
 /* All String Function Implementations */
 
