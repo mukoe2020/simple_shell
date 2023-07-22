@@ -34,3 +34,40 @@ void shell_env(void)
 		env++;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * blt_matcher - a function that matches or checks for a builtin function
+ * @tokens_made: pointer to user input tokenized for execution
+ */
+void blt_matcher(char **tokens_made)
+{
+	if (strcmp_alt(tokens_made[0], "exit") == 0)
+	{
+		shell_exit();
+	}
+	else if (strcmp_alt(tokens_made[0], "env") == 0)
+	{
+		shell_env();
+	}
+}

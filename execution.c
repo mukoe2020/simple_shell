@@ -14,14 +14,11 @@ int exec_args(char **tokens_made)
 	{
 		return (1);
 	}
-	if (strcmp_alt(tokens_made[0], "exit") == 0)
-	{shell_exit();
-	}
-	else if (strcmp_alt(tokens_made[0], "env") == 0)
-	{shell_env();
-	}
 	else
 	{
+
+		blt_matcher(tokens_made); /* handle built_ins if presented */
+
 		ourchild = fork();
 		if (ourchild == -1)
 		{perror("child process failed to be created");
