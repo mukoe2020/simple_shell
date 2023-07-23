@@ -26,6 +26,7 @@ FILE *input_stream);
 
 /*Token Handlers */
 char **token_maker(char *linebuf);
+char *alt_strtok(char *string, const char *del);
 void _release(char **tokens_made);
 
 /* Execution Handlers */

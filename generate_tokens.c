@@ -18,7 +18,7 @@ char **token_maker(char *linebuf)
 		exit(EXIT_FAILURE);
 	}
 
-	tok = strtok(linebuf_clone, TOK_DEL);
+	tok = alt_strtok(linebuf_clone, TOK_DEL);
 
 	while (tok != NULL)
 	{
@@ -41,7 +41,7 @@ individual_tok_space, buf_s * sizeof(char *), buf_s * sizeof(char *));
 				exit(EXIT_FAILURE);
 			}
 		}
-		tok = strtok(NULL, TOK_DEL);
+		tok = alt_strtok(NULL, TOK_DEL);
 	}
 	free(linebuf_clone);
 	individual_tok_space[station] = NULL;
