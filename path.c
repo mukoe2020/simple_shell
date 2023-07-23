@@ -22,7 +22,7 @@ char *commandExists(const char *cmd)
 			return (NULL);
 		cmd_size = strlen_alt(cmd);
 		path_clone = strdup_func(path);
-		tok = strtok(path_clone, ":");
+		tok = alt_strtok(path_clone, ":");
 
 		while (tok != NULL)
 		{
@@ -41,7 +41,7 @@ char *commandExists(const char *cmd)
 				free(path_clone);
 				return (strdup_func(fullpath));
 			}
-			tok = strtok(NULL, ":");
+			tok = alt_strtok(NULL, ":");
 		}
 		free(path_clone);
 	}
