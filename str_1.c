@@ -3,7 +3,7 @@
 size_t strlen_alt(const char *s);
 char *strcat_alt(char *dest, const char *src);
 int strcmp_alt(char *s1, char *s2);
-char *strchr_alt(char *s, char c);
+const char *strchr_alt(const char *s, char c);
 char *strcpy_alt(char *destination, char *source);
 char *getenv_alt(const char *variable_name);
 /**
@@ -109,7 +109,7 @@ return (0);
 */
 
 
-char *strchr_alt(char *s, char c)
+const char *strchr_alt(const char *s, char c)
 {
 int h;
 
@@ -118,10 +118,10 @@ for (h = 0; s[h] >= 0; h++)
 {
 if (s[h] == c)
 {
-return (&s[h]);
+return (s + h);
 }
 }
-return (0);
+return (NULL);
 }
 
 
