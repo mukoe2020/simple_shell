@@ -11,7 +11,7 @@
 
 #define TOK_DEL " \n"
 #define CMD_LEN 64
-#define BUF 1024
+#define SIZE_B 1024
 
 /* Accessing environmental variables */
 extern char **environ;
@@ -21,6 +21,8 @@ void loop_ourshell();
 
 /*Command/Input Readers */
 char *read_command();
+ssize_t our_getline(char **line_buffer, size_t *buffer_size,
+FILE *input_stream);
 
 /*Token Handlers */
 char **token_maker(char *linebuf);
