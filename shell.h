@@ -51,7 +51,7 @@ void shell_env(void);
 size_t strlen_alt(const char *s);
 char *strcat_alt(char *dest, const char *src);
 int strcmp_alt(char *s1, char *s2);
-const char *strchr_alt(const char *s, char c);
+char *strchr_alt(const char *s, char c);
 char *strdup_func(const char *s);
 char *strncat_alt(char *dest, char *src, int n);
 size_t strspn_alt(char *s, char *accept);

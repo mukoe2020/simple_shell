@@ -20,7 +20,7 @@ char *alt_strtok(char *string, const char *del)
 		return (NULL);
 	}
 
-	while (*remainder != '\0' && strchr(del, *remainder) != NULL)
+	while (*remainder != '\0' && strchr_alt(del, *remainder) != NULL)
 	{
 		remainder++;
 	}
