@@ -20,7 +20,7 @@ char *read_command()
 	if (getline_read == -1)
 	{
 		free(linebuf);
-		write(STDERR_FILENO, "\n", 2);
+		/*write(STDOUT_FILENO, "\n", 2);*/
 		return (NULL);
 	}
 	/* print prompt on newline if user taps on only enter, or spaces */
