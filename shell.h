@@ -46,6 +46,12 @@ void blt_matcher(char **tokens_made);
 void shell_exit(void);
 void shell_env(void);
 
+/* Error handlers */
+void print_error(const char *name, int cmd_count, const char *command,
+const char *error_msg);
+void print_string(int descriptor, const char *string);
+void convert_string(int num, char *string);
+
 /* All String Function Implementations */
 
 size_t strlen_alt(const char *s);

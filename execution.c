@@ -6,8 +6,9 @@
  */
 int exec_args(char **tokens_made)
 {
-	int condition;
+	int condition, cmd_count;
 	char *cmd;
+	const char *errcmd, *name, *errmsg;
 	pid_t ourchild;
 
 	if (tokens_made[0] == NULL)
@@ -25,10 +26,12 @@ int exec_args(char **tokens_made)
 			return (1);
 		}
 		if (!ourchild)
-		{
-			cmd = commandExists(tokens_made[0]);
+		{cmd = commandExists(tokens_made[0]);
+			name = "./hsh", cmd_count = 1, errmsg = "not found";
+			errcmd = tokens_made[0];
 			if (cmd == NULL)
-			{perror("Command not found");
+			{
+				print_error(name, cmd_count, errcmd, errmsg);
 				return (0);
 			}
 			if (execve(cmd, tokens_made, environ) == -1)
