@@ -7,7 +7,6 @@
 char *read_command()
 {
 	char *linebuf = NULL;
-	char *tempbuf = NULL;
 	size_t m = 0;
 	ssize_t getline_read;
 
@@ -35,14 +34,13 @@ char *read_command()
 	if (linebuf[strlen_alt(linebuf) - 1] != '\n')
 	{
 		m += 2;
-		tempbuf = (char *)realloc(linebuf, m);
-		if (tempbuf == NULL)
+		linebuf = (char *)realloc(linebuf, m);
+		if (linebuf == NULL)
 		{
 			free(linebuf);
 			perror("No space allocated");
 			return (NULL);
 		}
-		linebuf = tempbuf;
 		linebuf[strlen_alt(linebuf) - 1] = '\0';
 	}
 

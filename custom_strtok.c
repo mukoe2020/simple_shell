@@ -8,7 +8,7 @@
 char *alt_strtok(char *string, const char *del)
 {
 	char *tok;
-	static char *remainder = NULL;
+	static char *remainder;
 
 	if (string != NULL)
 	{
