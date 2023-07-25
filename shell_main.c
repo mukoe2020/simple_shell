@@ -3,16 +3,18 @@
 /**
   * loop_ourshell - Loops shell and implements functions
   * until ctrl + d is entered
+  * @ac: number of command line arguments.
+  * @argv: array of command lie arguments.
   * Return: void
   */
-void loop_ourshell(void)
+void loop_ourshell(int ac, char **argv)
 {
 	int condition = 1;
 	char *linebuf = NULL;
 	char **tokens_made;
 
 	do {
-		linebuf = read_command();
+		linebuf = read_command(ac, argv);
 		if (linebuf == NULL)
 		{
 			free(linebuf);
@@ -35,7 +37,7 @@ void loop_ourshell(void)
   */
 int main(int ac __attribute__((unused)), char **argv __attribute__((unused)))
 {
-	loop_ourshell();
+	loop_ourshell(ac, argv);
 
 	return (0);
 }

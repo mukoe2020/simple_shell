@@ -5,14 +5,14 @@
  *
  * Description: 'this function is responsible
  *for exiting the shell'
- *
- * Return: void
+ *@status:represents integer value to specicify the exit status
+ * Return:void
  *
  **/
 
-void shell_exit(void)
+void shell_exit(int status)
 {
-	exit(0);
+	exit(status);
 }
 
 /**
@@ -36,26 +36,6 @@ void shell_env(void)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * blt_matcher - a function that matches or checks for a builtin function
  * @tokens_made: pointer to user input tokenized for execution
@@ -64,8 +44,17 @@ void blt_matcher(char **tokens_made)
 {
 	if (strcmp_alt(tokens_made[0], "exit") == 0)
 	{
-		shell_exit();
+		int status = 0;
+
+		if (tokens_made[1] != NULL)
+
+		{
+			status = atoi_alt(tokens_made[1]);
+		}
+
+		shell_exit(status);
 	}
+
 	else if (strcmp_alt(tokens_made[0], "env") == 0)
 	{
 		shell_env();

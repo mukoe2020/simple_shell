@@ -17,7 +17,7 @@
 extern char **environ;
 
 /*Shell's Loop*/
-void loop_ourshell();
+void loop_ourshell(int argc ,char **argv);
 
 /*Command/Input Readers */
 char *read_command();
@@ -43,7 +43,7 @@ void *custom_realloc(void *ptr, unsigned int old_s, size_t);
 
 /* Built-in Command Handlers */
 void blt_matcher(char **tokens_made);
-void shell_exit(void);
+void shell_exit(int status);
 void shell_env(void);
 
 /* Error handlers */
@@ -64,7 +64,7 @@ size_t strspn_alt(char *s, char *accept);
 int strncmp_alt(const char *s1, const char *s2, int n);
 char *strcpy_alt(char *destination, char *source);
 char *strncpy_alt(char *destination, char *source, int n);
-
+int atoi_alt(char *s);
 
 #endif /* _SHELL_H */
 

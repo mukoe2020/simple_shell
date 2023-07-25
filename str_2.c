@@ -5,6 +5,7 @@ char *strncat_alt(char *dest, char *src, int n);
 size_t strspn_alt(char *s, char *accept);
 int strncmp_alt(const char *s1, const char *s2, int n);
 char *strncpy_alt(char *destination, char *source, int n);
+int atoi_alt(char *s);
 
 /**
 * strdup_func - Entry point
@@ -181,5 +182,35 @@ char *strncpy_alt(char *destination, char *source, int n)
 		destination[cob] = '\0';
 	}
 	return (destination);
-}
 
+}
+/**
+ * atoi_alt - Entry point
+ * Description -'funtion that converts a chracter string to an integer'
+ * @s: the string to be converted
+ * Return: converted interger value
+ */
+int atoi_alt(char *s)
+{
+	int res_value = 0;
+	int sn = 1;
+	int h = 0;
+
+	while (s[h] == ' ' || s[h] == '\t' || s[h] == '\n')
+	{
+		h++;
+	}
+
+	if (s[h] == '+' || s[h] == '-')
+	{
+		sn = (s[h++] == '-') ? -1 : 1;
+	}
+
+	while (s[h] >= '0' && s[h] <= '9')
+	{
+		res_value = res_value * 10 + (s[h] - '0');
+		h++;
+	}
+
+return (res_value * sn);
+}
