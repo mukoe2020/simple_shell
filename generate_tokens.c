@@ -13,6 +13,7 @@ char **token_maker(char *linebuf)
 	if (linebuf == NULL || individual_tok_space == NULL)
 	{
 		perror("No space allocated");
+		free(individual_tok_space);
 		exit(EXIT_FAILURE);
 	}
 
@@ -35,6 +36,7 @@ char **token_maker(char *linebuf)
 individual_tok_space, buf_s * sizeof(char *), buf_s * sizeof(char *));
 			if (individual_tok_space == NULL)
 			{
+				free(individual_tok_space);
 				perror("No space allocated");
 				exit(EXIT_FAILURE);
 			}
