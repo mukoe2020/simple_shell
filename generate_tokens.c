@@ -9,16 +9,14 @@ char **token_maker(char *linebuf)
 	size_t buf_s = CMD_LEN, station = 0;
 	char **individual_tok_space = malloc(buf_s * sizeof(char *));
 	char *tok;
-	char *linebuf_clone = strdup_func(linebuf);
 
-	if (linebuf == NULL || individual_tok_space == NULL || linebuf_clone ==
-			NULL)
+	if (linebuf == NULL || individual_tok_space == NULL)
 	{
 		perror("No space allocated");
 		exit(EXIT_FAILURE);
 	}
 
-	tok = alt_strtok(linebuf_clone, TOK_DEL);
+	tok = alt_strtok(linebuf, TOK_DEL);
 
 	while (tok != NULL)
 	{
@@ -43,7 +41,6 @@ individual_tok_space, buf_s * sizeof(char *), buf_s * sizeof(char *));
 		}
 		tok = alt_strtok(NULL, TOK_DEL);
 	}
-	free(linebuf_clone);
 	individual_tok_space[station] = NULL;
 	return (individual_tok_space);
 }
