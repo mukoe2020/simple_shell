@@ -31,18 +31,19 @@ int exec_args(char **tokens_made)
 			errcmd = tokens_made[0];
 			if (cmd == NULL)
 			{
+				condition = 127;
 				print_error(name, cmd_count, errcmd, errmsg);
-				return (0);
+				exit(condition);
 			}
 			if (execve(cmd, tokens_made, environ) == -1)
 			{perror(cmd);
 				free(cmd);
-				return (0);
+				exit(1);
 			}
 		}
 		else
 		{
-			wait(&condition);
+			waitpid (ourchild, &condition, 0);
 		}
 	}
 	return (-1);
