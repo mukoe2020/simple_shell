@@ -30,8 +30,7 @@ int exec_args(char **tokens_made)
 			name = "./hsh", cmd_count = 1, errmsg = "not found";
 			errcmd = tokens_made[0];
 			if (cmd == NULL)
-			{
-				condition = 127;
+			{condition = 127;
 				print_error(name, cmd_count, errcmd, errmsg);
 				exit(condition);
 			}
@@ -43,7 +42,7 @@ int exec_args(char **tokens_made)
 		}
 		else
 		{
-			waitpid (ourchild, &condition, 0);
+			waitpid(ourchild, &condition, 0);
 		}
 	}
 	return (-1);
