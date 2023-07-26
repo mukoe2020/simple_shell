@@ -16,6 +16,8 @@
 /* Accessing environmental variables */
 extern char **environ;
 
+int status;
+
 /*Shell's Loop*/
 void loop_ourshell(int argc, char **argv);
 
