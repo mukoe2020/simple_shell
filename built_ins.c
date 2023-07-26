@@ -35,7 +35,6 @@ void shell_env(void)
 	}
 }
 
-
 /**
  * blt_matcher - a function that matches or checks for a builtin function
  * @tokens_made: pointer to user input tokenized for execution
@@ -58,5 +57,7 @@ void blt_matcher(char **tokens_made)
 	else if (strcmp_alt(tokens_made[0], "env") == 0)
 	{
 		shell_env();
+
+		return;
 	}
 }
