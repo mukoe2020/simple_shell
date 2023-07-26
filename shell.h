@@ -17,12 +17,10 @@
 extern char **environ;
 
 /*Shell's Loop*/
-void loop_ourshell(int argc ,char **argv);
+void loop_ourshell(int argc, char **argv);
 
 /*Command/Input Readers */
 char *read_command();
-ssize_t our_getline(char **line_buffer, size_t *buffer_size,
-FILE *input_stream);
 
 /*Token Handlers */
 char **token_maker(char *linebuf);
