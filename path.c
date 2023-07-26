@@ -6,7 +6,7 @@
  */
 char *commandExists(const char *cmd)
 {
-	char *path = getenv_alt("PATH");
+	char *path = getenv("PATH");
 	size_t cmd_size, path_size;
 	char *path_clone, *tok;
 	char fullpath[1024] = "";
