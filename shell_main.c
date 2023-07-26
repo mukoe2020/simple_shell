@@ -21,6 +21,7 @@ void loop_ourshell(int ac, char **argv)
 			break;
 		}
 		tokens_made = token_maker(linebuf);
+
 		condition = exec_args(tokens_made);
 
 		free(linebuf);
