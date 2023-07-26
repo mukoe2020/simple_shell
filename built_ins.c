@@ -15,28 +15,7 @@ void shell_exit(int status)
 	exit(status);
 }
 
-/**
- * shell_env - handles the env command.
- *
- * Description: This function prints the envronment
- * to the standard output
- *
- * Return:void
- */
 
-/**
- * void shell_env(void)
-{
-	char **env = environ;
-
-	while (*env != NULL)
-	{
-		write(1, *env, strlen(*env));
-		write(1, "\n", 1);
-		env++;
-	}
-}
-*/
 
 /**
  * blt_matcher - a function that matches or checks for a builtin function
