@@ -16,7 +16,6 @@
 /* Accessing environmental variables */
 extern char **environ;
 
-int status;
 
 /*Shell's Loop*/
 void loop_ourshell(int argc, char **argv);
@@ -66,5 +65,6 @@ char *strcpy_alt(char *destination, char *source);
 char *strncpy_alt(char *destination, char *source, int n);
 int atoi_alt(char *s);
 
+int status;
 #endif /* _SHELL_H */
 

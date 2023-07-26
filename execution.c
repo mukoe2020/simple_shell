@@ -12,43 +12,38 @@ int exec_args(char **tokens_made)
 	pid_t ourchild;
 
 	if (tokens_made[0] == NULL)
-	{
 		return (1);
+
+	blt_matcher(tokens_made); /* handle built_ins if presented */
+	cmd = commandExists(tokens_made[0]);
+	name = "./hsh", cmd_count = 1, errmsg = "not found";
+	errcmd = tokens_made[0];
+	if (cmd == NULL)
+	{
+		free(cmd);
+		status = 127;
+		print_error(name, cmd_count, errcmd, errmsg);
+		return (-1);
+	}
+	ourchild = fork();
+	if (ourchild == -1)
+	{perror("child process failed to be created");
+		return (1);
+	}
+	if (!ourchild)
+	{
+		if (execve(cmd, tokens_made, environ) == -1)
+		{perror(cmd);
+			exit(1);
+		}
 	}
 	else
 	{
-
-		blt_matcher(tokens_made); /* handle built_ins if presented */
-
-		cmd = commandExists(tokens_made[0]);
-		name = "./hsh", cmd_count = 1, errmsg = "not found";
-		errcmd = tokens_made[0];
-
-		if (cmd == NULL)
-		{
-			status = 127;
-			print_error(name, cmd_count, errcmd, errmsg);
-			return(1);
-		}
-		ourchild = fork();
-		if (ourchild == -1)
-		{perror("child process failed to be created");
-			return (1);
-		}
-		if (!ourchild)
-		{
-			if (execve(cmd, tokens_made, environ) == -1)
-			{perror(cmd);
-				free(cmd);
-				exit(1);
-			}
-		}
-		else
-		{
-			waitpid(ourchild, &condition, 0);
-			if (WIFEXITED(condition))
-				status = WEXITSTATUS(condition);
-		}
+		waitpid(ourchild, &condition, 0);
+		if (WIFEXITED(condition))
+			status = WEXITSTATUS(condition);
 	}
-	return (-1);
+
+	free(cmd);
+	return (1);
 }
