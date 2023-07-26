@@ -23,7 +23,9 @@ void shell_exit(int status)
  *
  * Return:void
  */
-void shell_env(void)
+
+/**
+ * void shell_env(void)
 {
 	char **env = environ;
 
@@ -34,6 +36,7 @@ void shell_env(void)
 		env++;
 	}
 }
+*/
 
 /**
  * blt_matcher - a function that matches or checks for a builtin function
@@ -56,7 +59,7 @@ void blt_matcher(char **tokens_made)
 
 	else if (strcmp_alt(tokens_made[0], "env") == 0)
 	{
-		shell_env();
+		/* shell_env();*/
 
 		return;
 	}
