@@ -83,6 +83,7 @@ End of File (EOF)
 Handles the "end of file" condition (Ctrl+D) appropriately.
 Exits the shell gracefully when the user presses Ctrl+D.
 ```
+
 ## Development
 
 <b>Simple Shell 0.1</b>
@@ -137,5 +138,5 @@ Exits the shell gracefully when the user presses Ctrl+D.
 ## Usage
 
 ```bash
-./hsh  Or <./nameofexecutable
+./hsh  Or <./nameofexecutable>
 ```
