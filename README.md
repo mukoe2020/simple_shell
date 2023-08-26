@@ -64,22 +64,22 @@ hsh shell_main.c shell.h test_ls_2
 $
 ```
 ## Basic Functionality Overview
-```bash
-Displays a prompt (such as ~$) to indicate it's ready to accept input.
-Waits for the user to type a command followed by pressing the Enter key (ending with a new line).
-Executing Commands
 
+```bash
+Displays a prompt such as ~$ to indicate it's ready to accept input.
+Waits for the user to type a command followed by pressing the Enter key (ending with a new line).
+
+Executing Commands
 Executes the entered command when the user presses Enter.
 Displays the prompt again after executing a command.
 Handles commands that are a single word (no arguments).
-Error Handling
 
+Error Handling
 If an executable program cannot be found, prints an error message.
 Displays the prompt again after printing the error message.
 Handles errors gracefully without crashing.
 
 End of File (EOF)
-
 Handles the "end of file" condition (Ctrl+D) appropriately.
 Exits the shell gracefully when the user presses Ctrl+D.
 ```
@@ -133,3 +133,9 @@ Exits the shell gracefully when the user presses Ctrl+D.
 * All features of 1.0 plus:
 * Implements the setenv built-in command to initialize or modify environment variables.
 * Implements the unsetenv built-in command to remove environment variables.
+
+## Usage
+
+```bash
+./hsh  Or <./nameofexecutable
+```
