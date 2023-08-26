@@ -4,8 +4,8 @@
 
 <code>In This Project We Were Assigned To Create a simple UNIX command interpreter</code>
 
-## Project Programming Language
-* C Programming language
+## Project's Programming Language
+* C 
 
 ## Styles
 * Betty linter
@@ -63,4 +63,73 @@ hsh shell_main.c shell.h test_ls_2
 hsh shell_main.c shell.h test_ls_2
 $
 ```
+## Basic Functionality Overview
+```bash
+Displays a prompt (such as ~$) to indicate it's ready to accept input.
+Waits for the user to type a command followed by pressing the Enter key (ending with a new line).
+Executing Commands
 
+Executes the entered command when the user presses Enter.
+Displays the prompt again after executing a command.
+Handles commands that are a single word (no arguments).
+Error Handling
+
+If an executable program cannot be found, prints an error message.
+Displays the prompt again after printing the error message.
+Handles errors gracefully without crashing.
+
+End of File (EOF)
+
+Handles the "end of file" condition (Ctrl+D) appropriately.
+Exits the shell gracefully when the user presses Ctrl+D.
+```
+## Development
+
+<b>Simple Shell 0.1</b>
+* Basic shell functionality.
+* Able to read and execute commands.
+* Handles simple execution of commands without arguments.
+* Limited built-in commands.
+
+<b>Simple Shell 0.2</b>
+* All features of 0.1 plus:
+* Supports command lines with arguments.
+* Basic handling of command execution using fork() and exec().
+
+<b>Simple Shell 0.3</b>
+* All features of 0.2 plus:
+* Handles the PATH variable to search for executable commands.
+* Won't call fork() if the command doesn't exist.
+* Can execute commands like /bin/ls and display their output.
+* Basic handling of signals (such as Ctrl+C).
+
+<b>Simple Shell 0.4</b>
+* All features of 0.3 plus:
+* Implements the exit built-in command to exit the shell.
+* Supports the exit command without any arguments.
+* Handles exit status correctly.
+
+<b>Simple Shell 1.0</b>
+* All features of 0.4 plus:
+* Implements the env built-in command to print the current environment variables.
+* Capable of showing environment variables like USER, PATH, etc.
+
+<b>Simple Shell 0.1.1 (Advanced)</b>
+* All features of 0.1 plus:
+* Implements a custom getline function to read input.
+* Uses a buffer to minimize the number of read system calls.
+* Utilizes static variables.
+
+<b>Simple Shell 0.2.1 (Advanced)</b>
+* All features of 0.2 plus:
+* Achieves command and argument separation without using strtok.
+
+<b>Simple Shell 0.4.1 (Advanced)</b>
+* All features of 0.4 plus:
+* Handles arguments for the exit built-in command.
+* Allows using the exit command with an integer status.
+
+<b>Setenv, Unsetenv (Advanced), 50% done</b>
+* All features of 1.0 plus:
+* Implements the setenv built-in command to initialize or modify environment variables.
+* Implements the unsetenv built-in command to remove environment variables.
