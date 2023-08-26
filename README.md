@@ -4,8 +4,10 @@
 
 <code>In This Project We Were Assigned To Create a simple UNIX command interpreter</code>
 
-## PROJECT WAS COMPLETED USING:
+## Project Programming Language
 * C Programming language
+
+## Styles
 * Betty linter
 
 ## Authors
@@ -34,7 +36,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 * Write a README with the description of your project
 * You should have an AUTHORS file at the root of your repository, listing all * * individuals having contributed content to the repository. Format, see Docker
 
-## Our Shell's Capabilities
+## Our Shell's Interactivity
 
 <code>This shell could work in interactive mode</code>
 
