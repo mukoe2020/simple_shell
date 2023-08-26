@@ -14,12 +14,14 @@
 - [@mukoe2020](https://www.github.com/mukoe2020)
 
 ## Compilation
+
 Your shell will be compiled this way:
-bash```
+```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
 
 ## Requirements Abided By
+
 * Allowed editors: vi, vim, emacs
 * All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the      options -Wall -Werror -Wextra -pedantic -std=gnu89
 * All your files should end with a new line
@@ -35,7 +37,8 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ## Our Shell's Capabilities
 
 <code>This shell could work in interactive mode</code>
-bash``` 
+
+```bash 
 $ ./hsh
 (~$) /bin/ls
 hsh shell_main.c shell.h
@@ -44,17 +47,18 @@ hsh shell_main.c shell.h
 $ 
 ```
 <code>And Also in Non-Interactive Mode</code>
-bash```
+  
+```bash
 $ echo "/bin/ls" | ./hsh
-hsh main.c shell.c test_ls_2
+hsh shell_main.c shell.h test_ls_2
 $
 $ cat test_ls_2
 /bin/ls
 /bin/ls
 $
 $ cat test_ls_2 | ./hsh
-hsh main.c shell.c test_ls_2
-hsh main.c shell.c test_ls_2
+hsh shell_main.c shell.h test_ls_2
+hsh shell_main.c shell.h test_ls_2
 $
 ```
 
