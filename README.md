@@ -5,7 +5,7 @@
 <code>In This Project We Were Assigned To Create a simple UNIX command interpreter</code>
 
 ## Project's Programming Language
-* C 
+* C
 
 ## Styles
 * Betty linter
@@ -40,16 +40,16 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 <code>This shell could work in interactive mode</code>
 
-```bash 
+```bash
 $ ./hsh
 (~$) /bin/ls
 hsh shell_main.c shell.h
 (~$)
 (~$) exit
-$ 
+$
 ```
 <code>And Also in Non-Interactive Mode</code>
-  
+
 ```bash
 $ echo "/bin/ls" | ./hsh
 hsh shell_main.c shell.h test_ls_2
